@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View,StyleSheet,Image,ListView,Text,Dimensions } from 'react-native';
+import { View,StyleSheet,Image,Text,Dimensions,FlatList } from 'react-native';
 import { TabNavigator,StackNavigator } from 'react-navigation';
 import TabBarItem from './TabBarItem/TabBarItem'
 import Swiper from 'react-native-swiper';
@@ -11,12 +11,12 @@ const {width} = Dimensions.get('window');
 const REQUEST_IMAGHE_URL = 'http://api.dgtle.com/api.php?actions=diydata&apikeys=DGTLECOM_APITEST1&bid=274&charset=UTF8&dataform=json&inapi=json&modules=portal&platform=ios&swh=480x800&timestamp=1499849221&token=7721d598d84399832ca1cb5db1a29996&version=3.3.0'
 const REQUEST_CONTENT_URL = 'https://api.dgtle.com/api.php?swh=480x800&version=3.3.0&actions=index&timestamp=1499914690&apikeys=DGTLECOM_APITEST1&modules=portal&token=d7512b1c305d0d897292addc55806bbb&order=dateline_desc&charset=UTF8&platform=ios&limit=0_20&inapi=json&dataform=json'
 
-export default class Main extends Component{
+export default class Main extends React.PureComponent{
 
     constructor(props) {
-    super(props);
-    this.state={
-            ds: new ListView.DataSource({rowHasChanged:(r1 , r2) => r1 !== r2}),
+         super(props);
+        this.state = {
+            ds:[],
             cycleViews: new Array()
         };
     }
@@ -60,7 +60,7 @@ export default class Main extends Component{
         // })
 
         this.setState({
-            ds: this.state.ds.cloneWithRows(sortable.reverse())
+            ds: sortable.reverse(),
         })
     }
 
@@ -88,27 +88,28 @@ export default class Main extends Component{
     render(){
         return(
             <View style={styles.container}>
-                <ListView dataSource={this.state.ds}
-                          renderRow={this._renderRow.bind(this)}
-                          renderHeader={this._renderHeader.bind(this)}/>
+                <FlatList data={this.state.ds}
+                ListHeaderComponent={this._renderHeader.bind(this)}
+                renderItem={this._renderRow}
+                keyExtractor={(itme) => itme.aid}/>
             </View>
         )
     }
-    _renderRow(rowData, sectionID, rowID, highlightRow){
+    _renderRow = ({item}) => {
         return(
             <View style={styles.cellStyle}>
                 <View style={styles.cellContentStyle}>
                     {/* ///上层View */}
                     <View style={styles.cellTopViewStyle}>
-                         <Image source={{uri: rowData.pic_url}} style={styles.headerImage}/>
-                         <Text style={styles.titleStyle}>{rowData.author}</Text>
-                         <Text style={styles.timeStyle}>{DateTool.getLocalTime(rowData.dateline)}</Text>
+                         <Image source={{uri: item.pic_url}} style={styles.headerImage}/>
+                         <Text style={styles.titleStyle}>{item.author}</Text>
+                         <Text style={styles.timeStyle}>{DateTool.getLocalTime(item.dateline)}</Text>
                     </View>
                     {/* ///中层View */}
                     <View style={styles.cellCenterViewStyle}> 
-                        <Image source={{uri: rowData.pic_url}} style={styles.contentImage}/>
-                        <Text style={{fontSize:15,color:'black',marginTop:8,marginLeft:8}}>{rowData.title}</Text>
-                        <Text style={styles.contentTextStyle} numberOfLines={2}>{rowData.summary}</Text>
+                        <Image source={{uri: item.pic_url}} style={styles.contentImage}/>
+                        <Text style={{fontSize:15,color:'black',marginTop:8,marginLeft:8}}>{item.title}</Text>
+                        <Text style={styles.contentTextStyle} numberOfLines={2}>{item.summary}</Text>
                     </View>
                     {/* ///下层View */}
                     <View style={styles.cellBottomViewStyle}> 
@@ -130,9 +131,9 @@ export default class Main extends Component{
                     activeDotColor='white'
                     paginationStyle={{bottom:25,position:'absolute'}}>
             {
-                this.state.cycleViews.map((item, i) => 
-                <View key={i} style={{flex:1,width,alignItems: 'center',backgroundColor: 'white',}}>
-                    <Image key={i} style={styles.image} source={{uri: item.pic_url}} />
+                this.state.cycleViews.map((item,index) => 
+                <View key={index} style={{flex:1,width,alignItems: 'center',backgroundColor: 'white',}}>
+                    <Image style={styles.image} source={{uri: item.pic_url}} />
                     <Text style={{bottom:2,position:'absolute',fontSize:13,textAlign:'center'}}>{item.title}</Text>
                 </View>
                 )
