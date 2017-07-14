@@ -3,7 +3,7 @@ import { View,StyleSheet,Image,ListView,Text,Dimensions } from 'react-native';
 import { TabNavigator,StackNavigator } from 'react-navigation';
 import TabBarItem from './TabBarItem/TabBarItem'
 import Swiper from 'react-native-swiper';
-import styles from './MainView-Style'
+import styles from './Styles/MainView-Style'
 import DateTool from './Date/DateTool'
 
 const {width} = Dimensions.get('window');
@@ -26,7 +26,7 @@ export default class Main extends Component{
         .then((response) => response.json())
         .then((jsonData) => {
             const obj = jsonData.returnData.blocklist['274'];
-            var array = new Array()
+            let array = new Array()
             for (var key in obj) {
                 if (obj.hasOwnProperty(key)) {
                     var element = obj[key];
@@ -54,12 +54,13 @@ export default class Main extends Component{
                 sortable.push(element)
             }
         }
-        //id 从大到小排序
-        sortable.sort(($0,$1) => {
-            return $1.aid - $0.aid
-        })
+        // //id 从大到小排序
+        // sortable.sort(($0,$1) => {
+        //     return $1.aid - $0.aid
+        // })
+
         this.setState({
-            ds: this.state.ds.cloneWithRows(sortable)
+            ds: this.state.ds.cloneWithRows(sortable.reverse())
         })
     }
 
@@ -118,6 +119,7 @@ export default class Main extends Component{
         )
     }
 
+
     _renderHeader(){
         return(
             <Swiper height={160} 
@@ -139,4 +141,3 @@ export default class Main extends Component{
         )
     }
 }
-
