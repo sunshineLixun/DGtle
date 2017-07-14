@@ -229,25 +229,29 @@
 		<data>
 		n57qDP4tZfLD1rCS43W0B4LQjzE=
 		</data>
-		<key>PlugIns/DGtleTests.xctest.dSYM/Contents/Info.plist</key>
-		<data>
-		+Xe9A6CGOItA56swG1nbERu9DOA=
-		</data>
-		<key>PlugIns/DGtleTests.xctest.dSYM/Contents/Resources/DWARF/DGtleTests</key>
-		<data>
-		qnp1v3ekB85Ik5PajadVjWZSAcw=
-		</data>
-		<key>PlugIns/DGtleTests.xctest/DGtleTests</key>
-		<data>
-		K2To2dzvaI1YkqlYQwIjfdIRrGQ=
-		</data>
 		<key>PlugIns/DGtleTests.xctest/Info.plist</key>
 		<data>
 		AqL5dZJFK3KqVe6yqGWReitvR8Q=
 		</data>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeDirectory</key>
+		<data>
+		2Pp9og/XnudCIiXwFzHVYWKnjdw=
+		</data>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeRequirements</key>
+		<data>
+		OnX22wWFKRSOFN1+obRynMCeyXM=
+		</data>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeRequirements-1</key>
+		<data>
+		/AqFu5+4BrrbjboMTXj5/0kJEkc=
+		</data>
 		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
-		xgyAzwB3ICjM5nQs3SZpid0xS4Y=
+		NHRG4xvwfHrF+fM/HVVWGLZ1+OE=
+		</data>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeSignature</key>
+		<data>
+		2jmj7l5rSw0yVb/vlWAYkK/YBwk=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -848,39 +852,6 @@
 			QFa4oVkeCq7DUecWrEpwl9K3/xP42pymdP4ohq/DBZQ=
 			</data>
 		</dict>
-		<key>PlugIns/DGtleTests.xctest.dSYM/Contents/Info.plist</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			+Xe9A6CGOItA56swG1nbERu9DOA=
-			</data>
-			<key>hash2</key>
-			<data>
-			RiudMLE4AkAxZMTeMjpn6u4kKsiPKWMUa46cCxLZeIc=
-			</data>
-		</dict>
-		<key>PlugIns/DGtleTests.xctest.dSYM/Contents/Resources/DWARF/DGtleTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			qnp1v3ekB85Ik5PajadVjWZSAcw=
-			</data>
-			<key>hash2</key>
-			<data>
-			CvtXJDzFq7EaiIWO17menXYYoumM0m9fAhhar85lPOw=
-			</data>
-		</dict>
-		<key>PlugIns/DGtleTests.xctest/DGtleTests</key>
-		<dict>
-			<key>hash</key>
-			<data>
-			K2To2dzvaI1YkqlYQwIjfdIRrGQ=
-			</data>
-			<key>hash2</key>
-			<data>
-			NBOS1Dp6vKmoiqi4PBYIuD7/9XnE6pNkr19K74lDFOw=
-			</data>
-		</dict>
 		<key>PlugIns/DGtleTests.xctest/Info.plist</key>
 		<dict>
 			<key>hash</key>
@@ -892,15 +863,59 @@
 			DfAdlqNmj1OSiZ18Nxn2LPjLNaBBZnOwQil+ZEL48oY=
 			</data>
 		</dict>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeDirectory</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2Pp9og/XnudCIiXwFzHVYWKnjdw=
+			</data>
+			<key>hash2</key>
+			<data>
+			t0NMeMJFscTD3cZ/O5D8ZTUlQsB2rJbVaXq8YKEHWKs=
+			</data>
+		</dict>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeRequirements</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			OnX22wWFKRSOFN1+obRynMCeyXM=
+			</data>
+			<key>hash2</key>
+			<data>
+			mHkgkE6rZQ51eIwFSqCwUk5qgL/HGqMt+NI3phdD+YY=
+			</data>
+		</dict>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeRequirements-1</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			/AqFu5+4BrrbjboMTXj5/0kJEkc=
+			</data>
+			<key>hash2</key>
+			<data>
+			75t8hKO7papSTidpd9uJ8YICjwNWSqL6hkQzxqfajCg=
+			</data>
+		</dict>
 		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			xgyAzwB3ICjM5nQs3SZpid0xS4Y=
+			NHRG4xvwfHrF+fM/HVVWGLZ1+OE=
 			</data>
 			<key>hash2</key>
 			<data>
-			VA4ZJpQmZ/sY6SpMENlcVWa54RgxO5iESIkLb8KxSno=
+			Hz/ix+bw1ONN6ie0crS7/GYywDz/FU7SeMDh2gJYY1Q=
+			</data>
+		</dict>
+		<key>PlugIns/DGtleTests.xctest/_CodeSignature/CodeSignature</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+			</data>
+			<key>hash2</key>
+			<data>
+			47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=
 			</data>
 		</dict>
 	</dict>

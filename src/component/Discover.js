@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View,StyleSheet } from 'react-native';
 import { TabNavigator,StackNavigator } from 'react-navigation';
-import TabBarItem from './TabBarItem/TabBarItem'
+import TabBarItem from './Components/TabBarItem';
 
 export default class Discover extends Component{
     static navigationOptions = ({navigation}) => ({
