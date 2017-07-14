@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
-import { View,StyleSheet,Image,Dimensions,ListView,Text } from 'react-native';
+import { View,StyleSheet,Image,ListView,Text,Dimensions } from 'react-native';
 import { TabNavigator,StackNavigator } from 'react-navigation';
 import TabBarItem from './TabBarItem/TabBarItem'
 import Swiper from 'react-native-swiper';
+import styles from './MainView-Style'
+import DateTool from './Date/DateTool'
 
 const {width} = Dimensions.get('window');
+
 const REQUEST_IMAGHE_URL = 'http://api.dgtle.com/api.php?actions=diydata&apikeys=DGTLECOM_APITEST1&bid=274&charset=UTF8&dataform=json&inapi=json&modules=portal&platform=ios&swh=480x800&timestamp=1499849221&token=7721d598d84399832ca1cb5db1a29996&version=3.3.0'
 const REQUEST_CONTENT_URL = 'https://api.dgtle.com/api.php?swh=480x800&version=3.3.0&actions=index&timestamp=1499914690&apikeys=DGTLECOM_APITEST1&modules=portal&token=d7512b1c305d0d897292addc55806bbb&order=dateline_desc&charset=UTF8&platform=ios&limit=0_20&inapi=json&dataform=json'
 
@@ -31,7 +34,7 @@ export default class Main extends Component{
                 }
             }
             this.setState({
-               cycleViews: this.state.cycleViews = array,
+               cycleViews: array
             })
         })
         .catch((error) => {
@@ -98,7 +101,7 @@ export default class Main extends Component{
                     <View style={styles.cellTopViewStyle}>
                          <Image source={{uri: rowData.pic_url}} style={styles.headerImage}/>
                          <Text style={styles.titleStyle}>{rowData.author}</Text>
-                         <Text style={styles.timeStyle}>{this._getLocalTime(rowData.dateline)}</Text>
+                         <Text style={styles.timeStyle}>{DateTool.getLocalTime(rowData.dateline)}</Text>
                     </View>
                     {/* ///中层View */}
                     <View style={styles.cellCenterViewStyle}> 
@@ -135,129 +138,5 @@ export default class Main extends Component{
             </Swiper>
         )
     }
-
-    /**
-     * 
-     * 比较时间差
-     * @param {any} targetTime 毫秒值
-     * @memberof Main
-     */
-    _getLocalTime(targetTime) {     
-        //当前时间的毫秒值
-        var nowDate = new Date().valueOf().toString().substr(0,10).valueOf();
-        var date3 = nowDate - targetTime;
-        //天
-        var days=Math.floor(date3/(24*3600*1000))
-        //时
-        var leave1=date3%(24*3600*1000)
-        var hours=Math.floor(leave1/(3600*1000))
-        //分
-        var leave2=leave1%(3600*1000)
-        var minutes=Math.floor(leave2/(60*1000))
-        //秒
-        var leave3=leave2%(60*1000)
-        var seconds=Math.round(leave3/1000)
-        if (days>0) {
-            return days+'天前'
-        }
-        if (days==0&&hours>0) {
-            return hours+'小时前'
-        }
-        if(days==0&&hours==0&&minutes>0){
-            return minutes+'分钟前'
-        }
-        if(days==0&&hours==0&&minutes==0&&seconds>0){
-            return '刚刚'
-        }
-    }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-    },
-    header: {
-        backgroundColor: '#EDEDF0',
-        height: 65,
-        width: width,
-    },
-    headerView:{
-        marginTop: 0,
-        marginLeft: 0,
-        flexDirection: 'row',
-        justifyContent: 'center',
-        width: width,
-        height: 65,
-    },
-    lineView:{
-        width: width,
-        height: 1,
-        bottom: 0,
-        position:'absolute',
-        backgroundColor: '#D9D9DF'
-    },
-    leftImage:{
-        top: 27,
-        right:10,
-        position:'absolute',
-    },
-    cellStyle:{
-        flex:1,
-        height:280,
-    },
-    cellContentStyle:{
-        borderColor:"#D9D9DF",
-        borderTopWidth:1,
-        borderBottomWidth: 1,
-        backgroundColor:'white',
-        top:10,
-        bottom:10,
-        position:'absolute',
-        width:width,
-    },
-    cellTopViewStyle:{
-        flex:1,
-        flexDirection:'row',
-        width:width,
-        alignItems: 'center',
-    },
-    cellCenterViewStyle:{
-        flex:3,
-        width:width,
-    },
-    cellBottomViewStyle:{
-        flex:1,
-        width:width,
-    },
-    headerImage:{
-        borderRadius: 20,
-        width:40,
-        height:40,
-        marginLeft:8
-    },
-    titleStyle:{
-        fontSize: 14,
-        color:'black',
-        marginLeft: 8,
-    },
-    timeStyle:{
-        fontSize:15,
-        color:'#778899',
-        right:8,
-        position:'absolute'
-    },
-    contentImage:{
-        width:width,
-        height:100,
-    },
-    contentTextStyle:{
-        fontSize:13,
-        color:'#d3d3d3',
-        marginTop:8,
-        marginLeft:8
-    },
-    image: {
-        width:width,
-        height:140
-    },
-});

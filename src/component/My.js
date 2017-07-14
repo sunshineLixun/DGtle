@@ -19,7 +19,7 @@ export default class My extends Component{
     render(){
         return(
             <View style={styles.container}>
-
+                
             </View>
         )
     }
