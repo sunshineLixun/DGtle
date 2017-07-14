@@ -1,0 +1,19 @@
+dependencies: \
+  /Users/lixun/Downloads/DGtle/node_modules/react-native/Libraries/Image/RCTImageShadowView.m \
+  /Users/lixun/Downloads/DGtle/node_modules/react-native/Libraries/Image/RCTImageShadowView.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTShadowView.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTComponent.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/lixun/Downloads/DGtle/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTUtils.h

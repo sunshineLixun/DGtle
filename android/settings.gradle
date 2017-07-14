@@ -1,0 +1,3 @@
+rootProject.name = 'DGtle'
+
+include ':app'
